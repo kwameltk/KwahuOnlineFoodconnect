@@ -3,55 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Red Red - [Your Business Name]</title>
+    <title>Order Red Red - Gobe GuyGuy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Order delicious Red Red online. Choose your preferred components and quantity. Contact us today!">
     <meta name="keywords" content="Red Red, Ghanaian Food, Order Online, [Your Business Name], Food Delivery, [Your Location]">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
+         body {
             font-family: sans-serif;
-            background-image: url(gob3.jpeg); 
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure body covers full viewport height */
+            background-image: url(gob3.jpeg); /* Replace with your image URL */
             background-size: cover;
             background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            color: #333; /* Text color for better contrast on background */
         }
 
-        .order-form {
-            background-color: rgba(0, 0, 0, 0.9); /* Added opacity here */
-            padding: 30px; 
-            border-radius: 5px;
+        h2 {
             color: white;
-            width: 90%; 
-            max-width: 450px; 
-            margin: 90px; 
+            text-align: center;
+            margin-top: 30px; /* Add some top margin */
         }
 
-        .order-form h2 {
-            margin-bottom: 20px;
-            text-align: left; 
+        #form-container {
+            width: 90%; /* Occupy most of the screen on smaller devices */
+            max-width: 600px; /* Set a maximum width for larger screens */
+            margin: 20px auto; /* Center horizontally */
+            margin-bottom: 150px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for the form */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
         }
 
-        .price-list {
-            margin-bottom: 20px;
+        iframe {
+            width: 100%; /* Make the iframe fill the container */
+            max-width: 100%;  /* Ensure it doesn't overflow */
+            height: 500px; /* Set a reasonable height (adjust as needed) */
+            border: none; /* Remove default iframe border */
+            border-radius: 10px;
         }
+        /*#form-container{
+background-color: red;
 
-        .price-list p {
-            margin: 5px 0;
-        }
-
-        .order-input {
-            width: 70%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: none;
-            border-radius: 3px;
-        }
+        }*/
 
         .footer {
             position: fixed; 
@@ -77,9 +74,10 @@
             margin: 0 5px;
         }
 
-        @media screen and (max-width: 600px) {
-            .order-form {
-                width: 100%; /* Increased width for smaller screens */ 
+       /* Media query for smaller screens (optional) */
+       @media (max-width: 480px) {
+            iframe {
+                height: 400px; /* Adjust height for smaller screens if needed */
             }
         }
     </style>
@@ -89,35 +87,9 @@
     <div class="order-form">
         <h2>Order Red Red</h2> 
 
-        <div class="price-list">
-            <p>Beans: 5 ₵ Upwards</p> 
-            <p>Ripe Plantain: 1 ₵</p> 
-            <p>Groundnut: 1 ₵</p> 
-            <p>Egg: 3 ₵</p> 
+        <div id="form-container">  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScuP9S4n_51-EmpgqiVyDSngwbDJSNvhqHqjUndPx-C5t88VQ/viewform?usp=pp_url" width="640" height="480" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
-
-        <label for="order">Type your order (e.g.,"6 cedis Beans & Gari, 1 Plantain, 1 Egg etc"):</label><br>
-        <input type="text" id="order" class="order-input" placeholder="Enter your order here"><br>
-
-        <label for="ghanaPostAddress">Enter Ghana Post GPS (e.g.,"El-0410-8505"):</label><br>
-        <input type="text" id="ghanaPostAddress" class="order-input" placeholder="Enter Ghana Post Address"><br><br> 
-
-        <label for="contact">Delivery Contact Number:</label><br>
-        <input type="text" id="contact" class="order-input" placeholder="Enter your phone number"><br>
-
-        <label for="whatsapp">Number on WhatsApp?</label>
-        <input type="checkbox" id="whatsapp" name="whatsapp"><br><br> 
-
-        <label for="tracker">Order Tracker Index:</label><br>
-        <input type="text" id="tracker" class="order-input" placeholder="Enter your initials (e.g., 'JB')"><br><br>
-
-        <label for="delivery">Delivery:</label>
-        <input type="checkbox" id="delivery" name="delivery"><br>
-
-        <label for="location">Delivery Location:</label><br>
-        <input type="text" id="location" class="order-input" placeholder="Enter your delivery location"><br><br>
-
-        <button onclick="submitOrder()">Submit Order</button>
+       
     </div>
 
     <footer class="footer">
@@ -129,48 +101,6 @@
             <a href="https://wa.me/message/WT52LBO6RYBJE1" target="_blank"><i class="fa fa-whatsapp"></i> WhatsApp</a> 
         </div>
     </footer>
-
-    <script>
-        function submitOrder() {
-            const order = document.getElementById('order').value;
-            const delivery = document.getElementById('delivery').checked;
-            const location = document.getElementById('location').value; 
-            const contact = document.getElementById('contact').value; 
-            const whatsapp = document.getElementById('whatsapp').checked;
-            const tracker = document.getElementById('tracker').value;
-            const ghanaPostAddress = document.getElementById('ghanaPostAddress').value; 
-
-            let emailBody = `New Red Red Order: ${order}`;
-
-            if (delivery) {
-                emailBody += `\nDelivery: Yes\nDelivery Location: ${location}`; 
-            }
-
-            if (contact) {
-                emailBody += `\nDelivery Contact: ${contact}`; 
-            }
-
-            if (whatsapp) {
-                emailBody += `\nWhatsApp: Yes`;
-            }
-
-            if (tracker) {
-                emailBody += `\nOrder Tracker Index: ${tracker}`;
-            }
-
-            if (ghanaPostAddress) { 
-                emailBody += `\nGhana Post GPS Address: ${ghanaPostAddress}`; 
-            }
-
-            // Replace with your actual email address
-            const recipientEmail = 'owusubright2002@gmail.com';
-
-            const encodedEmail = encodeURIComponent(emailBody);
-            const mailtoUrl = `mailto:${recipientEmail}?subject=Red%20Red%20Order&body=${encodedEmail}`;
-
-            window.location.href = mailtoUrl;
-        }
-    </script>
-
+      
 </body>
 </html>
