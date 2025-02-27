@@ -38,6 +38,83 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
         }
 
+        /* ... (other CSS) ... */
+        .accordion-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center horizontally within container */
+  width: 80%; /* Adjust width for responsiveness */
+  max-width: 900px; /* Set a maximum width */
+  margin: 20px auto; /* Center the container horizontally */
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  width: 100%;
+  justify-content: center; /* Center columns within row */
+}
+
+.col {
+  flex: 1; /* Equal width columns */
+  margin: 10px; /* Add some spacing between columns */
+  width: calc(33.33% - 20px); /* Adjust width for 3 columns with margins */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%; /* Full width of the column */
+  text-align: left;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between; /* Align content and plus sign */
+  align-items: center; /* Vertically align content */
+}
+
+.centered-paragraph {
+    text-align: center; /* Center the text within the paragraph */
+    margin-top: 3px; /* Add some spacing between the h2 and the paragraph */
+    color: white;
+    padding: 0 20px; /* Add horizontal padding for responsiveness */
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+
+.plus-sign {
+  font-size: 20px;
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-top: none; /* Remove top border to connect with button */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .col {
+    width: calc(50% - 20px); /* Two columns on smaller screens */
+  }
+  .centered-paragraph {
+      font-size: 16px; /* Example: Slightly smaller font on smaller screens */
+      padding: 0 10px; /* Reduce padding on smaller screens */
+    }
+  }
+
+@media (max-width: 480px) {
+  .col {
+    width: 100%; /* One column on very small screens */
+  }
+}
+
+
         iframe {
             width: 100%; /* Make the iframe fill the container */
             max-width: 100%;  /* Ensure it doesn't overflow */
@@ -83,7 +160,53 @@ background-color: red;
     </style>
 </head>
 <body>
+    <h2>Accordion</h2>
+    <p class="centered-paragraph">This is the paragraph that will be centered below the h2 title.
+        and the hadknlfrlkj;relkgew'gkletg'tklgw;lkglkgm.kgmk.wgm,
+    </p>
 
+    <div class="accordion-container">
+      <div class="row">
+        <div class="col">
+          <button class="accordion">Ramatu </button>
+          <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+        <div class="col">
+          <button class="accordion">Accordion 2</button>
+          <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+        <div class="col">
+          <button class="accordion">Accordion 3</button>
+          <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button class="accordion">Accordion 4</button>
+          <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+        <div class="col">
+          <button class="accordion">Accordion 5</button>
+          <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+        <div class="col">
+          <button class="accordion">Accordion 6</button>
+          <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="order-form">
         <h2>Order Red Red</h2> 
 
@@ -101,6 +224,6 @@ background-color: red;
             <a href="https://wa.me/message/WT52LBO6RYBJE1" target="_blank"><i class="fa fa-whatsapp"></i> WhatsApp</a> 
         </div>
     </footer>
-      
+    <script src="js.js"></script>
 </body>
 </html>
