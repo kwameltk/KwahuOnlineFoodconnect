@@ -1,229 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Red Red - Gobe Abrantie</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Order delicious Red Red online. Choose your preferred components and quantity. Contact us today!">
-    <meta name="keywords" content="Red Red, Ghanaian Food, Order Online, [Your Business Name], Food Delivery, [Your Location]">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kwahu Online Food Connect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Order delicious Red Red online. Choose your preferred components and quantity. Contact us today!"
+    />
+    <meta
+      name="keywords"
+      content="Red Red, Ghanaian Food, Order Online, [Your Business Name], Food Delivery, [Your Location]"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <style>
-         body {
-            font-family: sans-serif;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; /* Ensure body covers full viewport height */
-            background-image: url(gob3.jpeg); /* Replace with your image URL */
-            background-size: cover;
-            background-position: center;
-            color: #333; /* Text color for better contrast on background */
-        }
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Ensure body covers full viewport height */
+        background-image: url(gob3.jpeg); /* Replace with your image URL */
+        background-size: cover;
+        background-position: center;
+        color: #333; /* Text color for better contrast on background */
+      }
 
-        h2 {
-            color: white;
-            text-align: center;
-            margin-top: 30px; /* Add some top margin */
+      h1{
+        
+        color: red;
+        text-align: center;
+        margin-top: 30px; /* Add some top margin */
+      }
+
+      h2 {
+        color: white;
+        text-align: center;
+        margin-top: 30px; /* Add some top margin */
+      }
+
+      #form-container {
+        width: 90%; /* Occupy most of the screen on smaller devices */
+        max-width: 500px; /* Set a maximum width for larger screens */
+        margin: 20px auto; /* Center horizontally */
+        margin-bottom: 150px;
+        padding: 20px;
+        background-color: rgba(
+          14,
+          1,
+          1,
+          0.8
+        ); /* Semi-transparent white background for the form */
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+      }
+
+      /* ... (other CSS) ... */
+      .accordion-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center horizontally within container */
+        width: 80%; /* Adjust width for responsiveness */
+        max-width: 900px; /* Set a maximum width */
+        margin: 20px auto; /* Center the container horizontally */
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        width: 100%;
+        justify-content: center; /* Center columns within row */
+      }
+
+      .col {
+        flex: 1; /* Equal width columns */
+        margin: 10px; /* Add some spacing between columns */
+        width: calc(
+          33.33% - 20px
+        ); /* Adjust width for 3 columns with margins */
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+      }
+
+      .accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%; /* Full width of the column */
+        text-align: left;
+        border: 1px solid #ddd;
+        display: flex;
+        justify-content: space-between; /* Align content and plus sign */
+        align-items: center; /* Vertically align content */
+      }
+
+      .centered-paragraph {
+        text-align: center; /* Center the text within the paragraph */
+        margin-top: 3px; /* Add some spacing between the h2 and the paragraph */
+        color: white;
+        padding: 0 20px; /* Add horizontal padding for responsiveness */
+        box-sizing: border-box; /* Include padding in width calculation */
+      }
+
+      .plus-sign {
+        font-size: 20px;
+      }
+
+      .panel {
+        padding: 0 18px;
+        display: none;
+        background-color: white;
+        overflow: hidden;
+        border: 1px solid #ddd;
+        border-top: none; /* Remove top border to connect with button */
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+      }
+
+      /* Mobile responsiveness */
+      @media (max-width: 768px) {
+        .col {
+          width: calc(100% - 20px); /* 100% width on mobile */
+        }
+        .centered-paragraph {
+          font-size: 16px;
+          padding: 0 10px;
         }
 
         #form-container {
-            width: 90%; /* Occupy most of the screen on smaller devices */
-            max-width: 600px; /* Set a maximum width for larger screens */
-            margin: 20px auto; /* Center horizontally */
-            margin-bottom: 150px;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for the form */
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+          width: 85%;
+          padding: 15px;
+          margin-bottom: 150px;
         }
-
-        /* ... (other CSS) ... */
-        .accordion-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Center horizontally within container */
-  width: 80%; /* Adjust width for responsiveness */
-  max-width: 900px; /* Set a maximum width */
-  margin: 20px auto; /* Center the container horizontally */
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  width: 100%;
-  justify-content: center; /* Center columns within row */
-}
-
-.col {
-  flex: 1; /* Equal width columns */
-  margin: 10px; /* Add some spacing between columns */
-  width: calc(33.33% - 20px); /* Adjust width for 3 columns with margins */
-  box-sizing: border-box; /* Include padding and border in element's total width and height */
-}
-
-.accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%; /* Full width of the column */
-  text-align: left;
-  border: 1px solid #ddd;
-  display: flex;
-  justify-content: space-between; /* Align content and plus sign */
-  align-items: center; /* Vertically align content */
-}
-
-.centered-paragraph {
-    text-align: center; /* Center the text within the paragraph */
-    margin-top: 3px; /* Add some spacing between the h2 and the paragraph */
-    color: white;
-    padding: 0 20px; /* Add horizontal padding for responsiveness */
-    box-sizing: border-box; /* Include padding in width calculation */
-  }
-
-.plus-sign {
-  font-size: 20px;
-}
-
-.panel {
-  padding: 0 18px;
-  display: none;
-  background-color: white;
-  overflow: hidden;
-  border: 1px solid #ddd;
-  border-top: none; /* Remove top border to connect with button */
-  box-sizing: border-box; /* Include padding and border in element's total width and height */
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .col {
-    width: calc(50% - 20px); /* Two columns on smaller screens */
-  }
-  .centered-paragraph {
-      font-size: 16px; /* Example: Slightly smaller font on smaller screens */
-      padding: 0 10px; /* Reduce padding on smaller screens */
-    }
-  }
-
-@media (max-width: 480px) {
-  .col {
-    width: 100%; /* One column on very small screens */
-  }
-}
-
 
         iframe {
-            width: 100%; /* Make the iframe fill the container */
-            max-width: 100%;  /* Ensure it doesn't overflow */
-            height: 500px; /* Set a reasonable height (adjust as needed) */
-            border: none; /* Remove default iframe border */
-            border-radius: 10px;
+          height: 400px;
         }
-        /*#form-container{
+      }
+
+      iframe {
+        width: 100%; /* Make the iframe fill the container */
+        max-width: 100%; /* Ensure it doesn't overflow */
+        height: 500px; /* Set a reasonable height (adjust as needed) */
+        border: none; /* Remove default iframe border */
+        border-radius: 10px;
+      }
+      /*#form-container{
 background-color: red;
 
         }*/
 
-        .footer {
-            position: fixed; 
-            bottom: 0;
-            left: 0;
-            right: 0; /* Center the footer horizontally */
-            margin: 0 auto; /* Center the footer horizontally */
-            width: 70%; /* Set footer width to 80% */
-            border-radius: 300px;
-            background-color: black;
-            padding: 5px;
-            text-align: center;
-            color: white;
-        }
+      .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0; /* Center the footer horizontally */
+        margin: 0 auto; /* Center the footer horizontally */
+        width: 90%; /* Set footer width to 80% */
+        border-radius: 500px;
+        background-color: black;
+        padding: 2px;
+        text-align: center;
+        color: white;
+      }
 
-        .social-media {
-            margin-top: 10px;
-        }
+      .social-media {
+        margin-top: 5px;
+      }
 
-        .social-media a {
-            color: white;
-            text-decoration: none;
-            margin: 0 5px;
-        }
+      .social-media a {
+        color: white;
+        text-decoration: none;
+        margin: 0 5px;
+      }
 
-       /* Media query for smaller screens (optional) */
-       @media (max-width: 480px) {
-            iframe {
-                height: 400px; /* Adjust height for smaller screens if needed */
-            }
+      /* Media query for smaller screens (optional) */
+      @media (max-width: 480px) {
+        iframe {
+          height: 400px; /* Adjust height for smaller screens if needed */
         }
+      }
     </style>
-</head>
-<body>
-    <h2>Accordion</h2>
-    <p class="centered-paragraph">This is the paragraph that will be centered below the h2 title.
-        and the hadknlfrlkj;relkgew'gkletg'tklgw;lkglkgm.kgmk.wgm,
+  </head>
+  <body>
+    <h2>You Order, We Deliver</h2>
+    <p class="centered-paragraph">
+      Ordering food online ensures fast delivery, saving you time and effort
+      while enjoying your favorite meals conveniently. It also cuts transport
+      costs, making dining more affordable. Note: Delivery Comes with Terms and conditions.
     </p>
 
     <div class="accordion-container">
       <div class="row">
         <div class="col">
-          <button class="accordion">Ramatu </button>
+          <button class="accordion">Ramatu</button>
           <div class="panel">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
         </div>
         <div class="col">
-          <button class="accordion">Accordion 2</button>
+          <button class="accordion">Efienefie Fast Food</button>
           <div class="panel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Rice + Chicken : 20GHC upwards<br><hr>
+              Jollof + Chicken : 20GHC upwards <br><hr>
+              Chicken + Vegies : 15GHC Upwards <br><hr>
+             Extra shito : 5GHC</p>
+             Location : Mpraeso
+
           </div>
         </div>
         <div class="col">
-          <button class="accordion">Accordion 3</button>
+          <button class="accordion">No Name</button>
           <div class="panel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Beans + Gari : 5GHC Upwards <br><hr>
+            Egg : 3GHC <br><hr>
+          Plantain : 1GHC <br><hr>
+          Fried Yam : 3GHC <br><hr>
+          Location : Mpraeso
+        </p>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <button class="accordion">Accordion 4</button>
+          <button class="accordion">Khonny Kitchen</button>
           <div class="panel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p> Jollof : 80GHC <br><hr>
+              Fried Rice : 80GHC <br><hr>
+              Waakye : 80GHC <br><hr>
+              Ampesi + Garden Eggs Stew: 80GHC <br><hr>
+              Ampesi + Garden Eggs Stew: 80GHC <br><hr>
+              Location : Bepong
+            </p>
           </div>
         </div>
         <div class="col">
-          <button class="accordion">Accordion 5</button>
+          <button class="accordion">Isha Allah Food</button>
           <div class="panel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p> Plain Rice,Jollof,Waakye : 7GHC Upwards <br><hr>
+            Vegetables : 2GHC <br><hr>
+            Gari : 1GHC <br><hr>
+            Marcroni : 1GHC <br><hr>
+              Fish : 3GHC Upwards<br><hr>
+             Chicken : 7GHC Upwards<br><hr>
+              Location : Mpraeso-Station
+            </p>
           </div>
         </div>
         <div class="col">
-          <button class="accordion">Accordion 6</button>
+          <button class="accordion">Ama Special Kenkey</button>
           <div class="panel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p> Kenkey : 5GHC <br><hr>
+              Okro : 3GHC <br><hr>
+              Fish(Tilapia & Kpala): 5GHC upwards <br><hr></p>
           </div>
         </div>
       </div>
     </div>
     <div class="order-form">
-        <h2>Order Red Red</h2> 
+      <h1> Place Your Order <hr>
+      </h1>
 
-        <div id="form-container">  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScuP9S4n_51-EmpgqiVyDSngwbDJSNvhqHqjUndPx-C5t88VQ/viewform?usp=pp_url" width="640" height="480" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-        </div>
-       
+      <div id="form-container">
+        <iframe
+          src="https://forms.gle/VUMTC7yPVB8jQKc78"
+          width="640"
+          height="480"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          >Loading…</iframe
+        >
+      </div>
     </div>
 
     <footer class="footer">
-        <p>Contact: 0545748380 | brandsclinic@gmail.com</p>
-        <div class="social-media">
-            <a href="[Your Instagram URL]" target="_blank"><i class="fa fa-instagram"></i> Instagram</a> 
-            <a href="[Your TikTok URL]" target="_blank"><i class="fa fa-tiktok"></i> TikTok</a> 
-            <a href="[Your Facebook URL]" target="_blank"><i class="fa fa-facebook-f"></i> Facebook</a> 
-            <a href="https://wa.me/message/WT52LBO6RYBJE1" target="_blank"><i class="fa fa-whatsapp"></i> WhatsApp</a> 
-        </div>
+      <p>Contact: 0545748380 | brandsclinic@gmail.com</p>
+      <div class="social-media">
+        <a href="[Your Instagram URL]" target="_blank"
+          ><i class="fa fa-instagram"></i> Instagram</a
+        >
+        <a href="[Your TikTok URL]" target="_blank"
+          ><i class="fa fa-tiktok"></i> TikTok</a
+        >
+        <a href="[Your Facebook URL]" target="_blank"
+          ><i class="fa fa-facebook-f"></i> Facebook</a
+        >
+        <a href="https://wa.me/message/WT52LBO6RYBJE1" target="_blank"
+          ><i class="fa fa-whatsapp"></i> WhatsApp</a
+        >
+      </div>
     </footer>
     <script src="js.js"></script>
-</body>
+  </body>
 </html>
